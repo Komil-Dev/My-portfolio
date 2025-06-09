@@ -1059,121 +1059,115 @@
                 <!-- Main Skills -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     <!-- Frontend Development -->
-                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 transform hover:scale-105 transition-all duration-300 group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform duration-300">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-xl hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-full blur-2xl z-0"></div>
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 z-10 relative">
                             <i class="fas fa-code text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-4">Frontend Development</h3>
-                        <div class="space-y-4">
-                            <div class="skill-item">
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">HTML5/CSS3</span>
-                                    <span class="text-[#4facfe] font-semibold">95%</span>
-                                </div>
-                                <div class="h-3 bg-white/10 rounded-full overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left transition-all duration-1000 ease-out" style="width: 0%"></div>
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full"></div>
-                                </div>
+                        <h3 class="text-xl font-semibold text-white mb-4 z-10 relative">Frontend Development</h3>
+                        <div class="space-y-6 z-10 relative">
+                            <!-- HTML5/CSS3 -->
+                            <div class="flex items-center mb-2">
+                                <i class="fab fa-html5 text-orange-400 text-xl mr-3"></i>
+                                <span class="text-gray-200 font-semibold flex-1">HTML5/CSS3</span>
+                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">95%</span>
                             </div>
-                            <div class="skill-item">
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">JavaScript</span>
-                                    <span class="text-[#4facfe] font-semibold">90%</span>
-                                </div>
-                                <div class="h-3 bg-white/10 rounded-full overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left transition-all duration-1000 ease-out" style="width: 0%"></div>
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full"></div>
-                                </div>
+                            <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 95%"></div>
                             </div>
-                            <div class="skill-item">
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">React.js</span>
-                                    <span class="text-[#4facfe] font-semibold">85%</span>
-                                </div>
-                                <div class="h-3 bg-white/10 rounded-full overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left transition-all duration-1000 ease-out" style="width: 0%"></div>
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full"></div>
-                                </div>
+                            <!-- JavaScript -->
+                            <div class="flex items-center mb-2">
+                                <i class="fab fa-js text-yellow-400 text-xl mr-3"></i>
+                                <span class="text-gray-200 font-semibold flex-1">JavaScript</span>
+                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">90%</span>
+                            </div>
+                            <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 90%"></div>
+                            </div>
+                            <!-- React.js -->
+                            <div class="flex items-center mb-2">
+                                <i class="fab fa-react text-blue-400 text-xl mr-3"></i>
+                                <span class="text-gray-200 font-semibold flex-1">React.js</span>
+                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">85%</span>
+                            </div>
+                            <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-2">
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 85%"></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Backend Development -->
-                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 transform hover:scale-105 transition-all duration-300 group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform duration-300">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-xl hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-purple-500/30 to-pink-600/30 rounded-full blur-2xl z-0"></div>
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 z-10 relative">
                             <i class="fas fa-server text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-4">Backend Development</h3>
-                        <div class="space-y-4">
-                            <div class="skill-item">
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">Node.js</span>
-                                    <span class="text-[#4facfe] font-semibold">80%</span>
-                                </div>
-                                <div class="h-3 bg-white/10 rounded-full overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left transition-all duration-1000 ease-out" style="width: 0%"></div>
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full"></div>
-                                </div>
+                        <h3 class="text-xl font-semibold text-white mb-4 z-10 relative">Backend Development</h3>
+                        <div class="space-y-6 z-10 relative">
+                            <!-- Node.js -->
+                            <div class="flex items-center mb-2">
+                                <i class="fab fa-node-js text-green-400 text-xl mr-3"></i>
+                                <span class="text-gray-200 font-semibold flex-1">Node.js</span>
+                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">80%</span>
                             </div>
-                            <div class="skill-item">
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">Express.js</span>
-                                    <span class="text-[#4facfe] font-semibold">85%</span>
-                                </div>
-                                <div class="h-3 bg-white/10 rounded-full overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left transition-all duration-1000 ease-out" style="width: 0%"></div>
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full"></div>
-                                </div>
+                            <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 80%"></div>
                             </div>
-                            <div class="skill-item">
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">MongoDB</span>
-                                    <span class="text-[#4facfe] font-semibold">75%</span>
-                                </div>
-                                <div class="h-3 bg-white/10 rounded-full overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left transition-all duration-1000 ease-out" style="width: 0%"></div>
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full"></div>
-                                </div>
+                            <!-- Express.js -->
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-bolt text-yellow-300 text-xl mr-3"></i>
+                                <span class="text-gray-200 font-semibold flex-1">Express.js</span>
+                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">85%</span>
+                            </div>
+                            <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 85%"></div>
+                            </div>
+                            <!-- MongoDB -->
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-database text-green-500 text-xl mr-3"></i>
+                                <span class="text-gray-200 font-semibold flex-1">MongoDB</span>
+                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">75%</span>
+                            </div>
+                            <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-2">
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 75%"></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Tools & Others -->
-                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 transform hover:scale-105 transition-all duration-300 group">
-                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform duration-300">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-xl hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-cyan-500/30 to-blue-600/30 rounded-full blur-2xl z-0"></div>
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 z-10 relative">
                             <i class="fas fa-tools text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-4">Tools & Others</h3>
-                        <div class="space-y-4">
-                            <div class="skill-item">
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">Git/GitHub</span>
-                                    <span class="text-[#4facfe] font-semibold">90%</span>
-                                </div>
-                                <div class="h-3 bg-white/10 rounded-full overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left transition-all duration-1000 ease-out" style="width: 0%"></div>
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full"></div>
-                                </div>
+                        <h3 class="text-xl font-semibold text-white mb-4 z-10 relative">Tools & Others</h3>
+                        <div class="space-y-6 z-10 relative">
+                            <!-- Git/GitHub -->
+                            <div class="flex items-center mb-2">
+                                <i class="fab fa-git-alt text-orange-400 text-xl mr-3"></i>
+                                <span class="text-gray-200 font-semibold flex-1">Git/GitHub</span>
+                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">90%</span>
                             </div>
-                            <div class="skill-item">
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">Docker</span>
-                                    <span class="text-[#4facfe] font-semibold">70%</span>
-                                </div>
-                                <div class="h-3 bg-white/10 rounded-full overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left transition-all duration-1000 ease-out" style="width: 0%"></div>
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full"></div>
-                                </div>
+                            <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 90%"></div>
                             </div>
-                            <div class="skill-item">
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">AWS</span>
-                                    <span class="text-[#4facfe] font-semibold">65%</span>
-                                </div>
-                                <div class="h-3 bg-white/10 rounded-full overflow-hidden relative">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform origin-left transition-all duration-1000 ease-out" style="width: 0%"></div>
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full"></div>
-                                </div>
+                            <!-- Docker -->
+                            <div class="flex items-center mb-2">
+                                <i class="fab fa-docker text-blue-400 text-xl mr-3"></i>
+                                <span class="text-gray-200 font-semibold flex-1">Docker</span>
+                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">70%</span>
+                            </div>
+                            <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 70%"></div>
+                            </div>
+                            <!-- AWS -->
+                            <div class="flex items-center mb-2">
+                                <i class="fab fa-aws text-yellow-400 text-xl mr-3"></i>
+                                <span class="text-gray-200 font-semibold flex-1">AWS</span>
+                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">65%</span>
+                            </div>
+                            <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-2">
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 65%"></div>
                             </div>
                         </div>
                     </div>
@@ -1484,6 +1478,12 @@
         </div>
     </footer>
 
+    <!-- Add this just before </body> -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-opacity duration-500 flex items-center space-x-2">
+        <i class="fas fa-paper-plane"></i>
+        <span>SMS sent to KomilDev</span>
+    </div>
+
     <script>
         // Loader functionality
         window.addEventListener('load', () => {
@@ -1567,12 +1567,12 @@
         });
 
         // Skill bars animation
-        const skillBars = document.querySelectorAll('.skill-item .h-full');
+        const skillBars = document.querySelectorAll('.skill-item .bg-gradient-to-r');
         const skillObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.width = entry.target.parentElement.parentElement.querySelector('.text-[#4facfe]').textContent;
-                    entry.target.style.transition = 'width 1s ease-in-out';
+                    const percentage = entry.target.parentElement.parentElement.querySelector('.text-[#4facfe]').textContent;
+                    entry.target.style.width = percentage;
                 }
             });
         }, { threshold: 0.5 });
@@ -1749,8 +1749,8 @@
             const formData = new FormData(form);
 
             // Your Telegram Bot Token and Chat ID
-            const BOT_TOKEN = 'YOUR_BOT_TOKEN';
-            const CHAT_ID = 'YOUR_CHAT_ID';
+            const BOT_TOKEN = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE';
+            const CHAT_ID = '7241567559';
 
             // Format message
             const message = `
@@ -1778,7 +1778,8 @@ Message: ${formData.get('message')}
 
                 if (data.ok) {
                     // Show success message
-                    alert('Thank you for your message! I will get back to you soon.');
+                    // alert('Thank you for your message! I will get back to you soon.');
+                    showToast();
                     form.reset();
                 } else {
                     throw new Error('Failed to send message');
@@ -1797,6 +1798,17 @@ Message: ${formData.get('message')}
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
         });
+
+        // Add this JS function at the end of the script
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.style.opacity = '1';
+            toast.style.pointerEvents = 'auto';
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.pointerEvents = 'none';
+            }, 3500);
+        }
     </script>
 </body>
 
