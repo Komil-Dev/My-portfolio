@@ -20,7 +20,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #0a0a0a;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
         }
 
         .k-letter {
@@ -851,15 +851,20 @@
 
         .komildev-hello {
             font-family: 'Pacifico', cursive;
-            font-size: 3rem;
-            color: #4facfe;
+            font-size: 4rem;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             white-space: nowrap;
             overflow: hidden;
             border-right: 3px solid #4facfe;
             width: 0;
             margin: 0 auto;
             display: block;
-            animation: typingHello 2.2s steps(8, end) 0.3s forwards, blink-caret 0.7s step-end infinite;
+            animation: typingHello 3.5s steps(8, end) 0.5s forwards, blink-caret 0.7s step-end infinite;
+            text-shadow: 0 0 20px rgba(79, 172, 254, 0.3);
+            letter-spacing: 2px;
         }
         @keyframes typingHello {
             from { width: 0 }
