@@ -9,17 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
         
         /* Loader Styles */
         .kx-loader {
-            position: relative;
-            width: 120px;
-            height: 120px;
+            width: 100vw;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: #0a0a0a;
         }
 
         .k-letter {
@@ -847,17 +848,34 @@
             border-color: #4facfe;
             box-shadow: 0 0 20px rgba(79, 172, 254, 0.2);
         }
+
+        .komildev-hello {
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            color: #4facfe;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #4facfe;
+            width: 0;
+            margin: 0 auto;
+            display: block;
+            animation: typingHello 2.2s steps(8, end) 0.3s forwards, blink-caret 0.7s step-end infinite;
+        }
+        @keyframes typingHello {
+            from { width: 0 }
+            to { width: 10.5ch }
+        }
+        @keyframes blink-caret {
+            0%, 100% { border-color: transparent; }
+            50% { border-color: #4facfe; }
+        }
     </style>
 </head>
 
 <body class="overflow-x-hidden">
     <!-- Loader -->
     <div id="loader" class="fixed inset-0 bg-black z-50 flex items-center justify-center">
-        <div class="relative">
-            <div class="kx-loader">
-                <span class="k-letter">K</span>
-            </div>
-        </div>
+        <span class="komildev-hello">KomilDev</span>
     </div>
     <div class="cursor-glow"></div>
     <div class="cursor-light"></div>
