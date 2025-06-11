@@ -1,0 +1,890 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+.kx-loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.k-letter {
+  font-size: 80px;
+  font-weight: 700;
+  color: #4facfe;
+  position: absolute;
+  opacity: 1;
+  z-index: 2;
+  text-shadow: 0 0 40px #4facfe, 0 0 80px #4facfe, 0 0 120px #4facfe;
+  animation: glowK 6s ease-in-out infinite alternate, pulseK 1.2s infinite;
+}
+
+@keyframes glowK {
+  0% {
+    text-shadow: 0 0 20px #4facfe, 0 0 40px #4facfe;
+  }
+
+  100% {
+    text-shadow: 0 0 60px #4facfe, 0 0 120px #4facfe;
+  }
+}
+
+@keyframes pulseK {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.kx-loader::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 6px solid #4facfe;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: spin 2.2s linear infinite;
+}
+
+.kx-loader::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border: 4px solid #4facfe;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: spin 4.8s linear infinite reverse;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.gradient-text {
+  color: #4facfe;
+}
+
+.glass-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+.neon-border {
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+.cursor-glow {
+  width: 20px;
+  height: 20px;
+  background: rgba(79, 172, 254, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.typing-text {
+  border-right: 2px solid #4facfe;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #4facfe;
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.rotate {
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.testimonial-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -2rem;
+  left: -1rem;
+  font-size: 12rem;
+  color: rgba(79, 172, 254, 0.1);
+  font-family: serif;
+  line-height: 1;
+}
+
+.testimonial-image {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(79, 172, 254, 0.3);
+  transition: all 0.5s ease;
+}
+
+.testimonial-card:hover .testimonial-image {
+  transform: scale(1.1);
+  border-color: #4facfe;
+}
+
+.skill-bar {
+  position: relative;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #4facfe;
+  border-radius: 4px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.5;
+  background: #4facfe;
+  border-radius: 50%;
+}
+
+.tech-stack-icon {
+  transition: transform 0.3s ease;
+}
+
+.tech-stack-icon:hover {
+  transform: translateY(-10px) scale(1.1);
+}
+
+.achievement-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(79, 172, 254, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.achievement-card:hover::after {
+  transform: translateX(100%);
+}
+
+.header-blur {
+  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 10, 0.8);
+  border-bottom: 1px solid rgba(79, 172, 254, 0.1);
+}
+
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #4facfe;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.hero-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(79, 172, 254, 0.1) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.footer-gradient {
+  background: linear-gradient(180deg, transparent, rgba(79, 172, 254, 0.1));
+}
+
+.social-icon {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.social-icon::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  background: rgba(79, 172, 254, 0.1);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover::before {
+  transform: scale(1);
+}
+
+.hero-text-glow {
+  text-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+}
+
+.scroll-indicator::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #4facfe;
+  border-radius: 50%;
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, 20px);
+    opacity: 0;
+  }
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-icon {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.project-category {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.project-category::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(79, 172, 254, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-category:hover::after {
+  opacity: 1;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.project-image img {
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.project-tag {
+  background: rgba(79, 172, 254, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  color: #4facfe;
+  transition: all 0.3s ease;
+}
+
+.project-tag:hover {
+  background: rgba(79, 172, 254, 0.3);
+  transform: translateY(-2px);
+}
+
+.contact-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(79, 172, 254, 0.1) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.contact-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.contact-input {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.contact-input input,
+.contact-input textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.contact-input input:focus,
+.contact-input textarea:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 20px rgba(79, 172, 254, 0.2);
+  outline: none;
+}
+
+.contact-input label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.contact-input input:focus + label,
+.contact-input textarea:focus + label,
+.contact-input input:not(:placeholder-shown) + label,
+.contact-input textarea:not(:placeholder-shown) + label {
+  transform: translateY(-1.5rem) scale(0.8);
+  color: #4facfe;
+}
+
+.contact-submit {
+  position: relative;
+  overflow: hidden;
+  background: #4facfe;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+}
+
+.contact-submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-submit:hover::before {
+  left: 100%;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.contact-info:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.contact-info i {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(79, 172, 254, 0.1);
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  color: #4facfe;
+  transition: all 0.3s ease;
+}
+
+.contact-info:hover i {
+  background: #4facfe;
+  color: white;
+  transform: rotate(360deg);
+}
+
+/* Enhanced Cursor Effects */
+.cursor-light {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.3s, height 0.3s;
+}
+
+.cursor-light.active {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.25) 0%, transparent 70%);
+}
+
+/* Enhanced Hover Effects */
+.hover-light {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-light::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.2) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  z-index: -1;
+}
+
+.hover-light:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Enhanced Click Effects */
+.click-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.click-ripple::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+  opacity: 0;
+}
+
+.click-ripple:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+}
+
+/* Enhanced Card Hover Effects */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.2) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  z-index: 0;
+}
+
+.project-card:hover::after {
+  width: 400px;
+  height: 400px;
+}
+
+/* Enhanced Button Effects */
+.contact-submit {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-submit::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.contact-submit:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Enhanced Navigation Effects */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.2) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+/* Add styles for active filter button */
+.active-filter {
+  background: rgba(79, 172, 254, 0.2) !important;
+  color: #4facfe !important;
+}
+
+/* Add transition for project cards */
+[data-category] {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Enhanced Contact Form Styles */
+.contact-input input:focus + label,
+.contact-input textarea:focus + label,
+.contact-input input:not(:placeholder-shown) + label,
+.contact-input textarea:not(:placeholder-shown) + label {
+  transform: translateY(-1.5rem) scale(0.8);
+  color: #4facfe;
+}
+
+.contact-input input:focus,
+.contact-input textarea:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 20px rgba(79, 172, 254, 0.2);
+}
+
+.contact-input label {
+  transition: all 0.3s ease;
+}
+
+.contact-input input,
+.contact-input textarea {
+  transition: all 0.3s ease;
+}
+
+.contact-input input:focus,
+.contact-input textarea:focus {
+  transform: translateY(-2px);
+}
+
+/* Floating label animation */
+.relative input:focus + label,
+.relative textarea:focus + label,
+.relative input:not(:placeholder-shown) + label,
+.relative textarea:not(:placeholder-shown) + label {
+  transform: translateY(-1.5rem) scale(0.8);
+  color: #4facfe;
+}
+
+.relative label {
+  transition: all 0.3s ease;
+}
+
+.relative input,
+.relative textarea {
+  transition: all 0.3s ease;
+}
+
+.relative input:focus,
+.relative textarea:focus {
+  transform: translateY(-2px);
+  border-color: #4facfe;
+  box-shadow: 0 0 20px rgba(79, 172, 254, 0.2);
+}
+
+.komildev-hello {
+  font-family: "Pacifico", cursive;
+  font-size: 4rem;
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #4facfe;
+  width: 0;
+  margin: 0 auto;
+  display: block;
+  animation: typingHello 3.5s steps(8, end) 0.5s forwards, blink-caret 0.7s step-end infinite;
+  text-shadow: 0 0 20px rgba(79, 172, 254, 0.3);
+  letter-spacing: 2px;
+}
+
+@keyframes typingHello {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 10.5ch;
+  }
+}
+
+@keyframes blink-caret {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #4facfe;
+  }
+}
