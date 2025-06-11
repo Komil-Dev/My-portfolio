@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-        
-        /* Loader Styles */
+
+
         .kx-loader {
             width: 100vw;
             height: 100vh;
@@ -31,17 +31,29 @@
             opacity: 1;
             z-index: 2;
             text-shadow: 0 0 40px #4facfe, 0 0 80px #4facfe, 0 0 120px #4facfe;
-            animation: glowK 1.5s ease-in-out infinite alternate, pulseK 1.2s infinite;
+            animation: glowK 6s ease-in-out infinite alternate, pulseK 1.2s infinite;
         }
 
         @keyframes glowK {
-            0% { text-shadow: 0 0 20px #4facfe, 0 0 40px #4facfe; }
-            100% { text-shadow: 0 0 60px #4facfe, 0 0 120px #4facfe; }
+            0% {
+                text-shadow: 0 0 20px #4facfe, 0 0 40px #4facfe;
+            }
+
+            100% {
+                text-shadow: 0 0 60px #4facfe, 0 0 120px #4facfe;
+            }
         }
 
         @keyframes pulseK {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.08); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
         }
 
         .kx-loader::before {
@@ -52,7 +64,7 @@
             border: 6px solid #4facfe;
             border-radius: 50%;
             opacity: 0.3;
-            animation: spin 1.2s linear infinite;
+            animation: spin 2.2s linear infinite;
         }
 
         .kx-loader::after {
@@ -63,13 +75,14 @@
             border: 4px solid #4facfe;
             border-radius: 50%;
             opacity: 0.2;
-            animation: spin 1.8s linear infinite reverse;
+            animation: spin 4.8s linear infinite reverse;
         }
 
         @keyframes spin {
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
@@ -80,6 +93,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -796,10 +810,10 @@
         }
 
         /* Enhanced Contact Form Styles */
-        .contact-input input:focus + label,
-        .contact-input textarea:focus + label,
-        .contact-input input:not(:placeholder-shown) + label,
-        .contact-input textarea:not(:placeholder-shown) + label {
+        .contact-input input:focus+label,
+        .contact-input textarea:focus+label,
+        .contact-input input:not(:placeholder-shown)+label,
+        .contact-input textarea:not(:placeholder-shown)+label {
             transform: translateY(-1.5rem) scale(0.8);
             color: #4facfe;
         }
@@ -825,10 +839,10 @@
         }
 
         /* Floating label animation */
-        .relative input:focus + label,
-        .relative textarea:focus + label,
-        .relative input:not(:placeholder-shown) + label,
-        .relative textarea:not(:placeholder-shown) + label {
+        .relative input:focus+label,
+        .relative textarea:focus+label,
+        .relative input:not(:placeholder-shown)+label,
+        .relative textarea:not(:placeholder-shown)+label {
             transform: translateY(-1.5rem) scale(0.8);
             color: #4facfe;
         }
@@ -866,13 +880,27 @@
             text-shadow: 0 0 20px rgba(79, 172, 254, 0.3);
             letter-spacing: 2px;
         }
+
         @keyframes typingHello {
-            from { width: 0 }
-            to { width: 10.5ch }
+            from {
+                width: 0
+            }
+
+            to {
+                width: 10.5ch
+            }
         }
+
         @keyframes blink-caret {
-            0%, 100% { border-color: transparent; }
-            50% { border-color: #4facfe; }
+
+            0%,
+            100% {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #4facfe;
+            }
         }
     </style>
 </head>
@@ -960,28 +988,28 @@
                         class="w-12 h-12 bg-[#4facfe] rounded-full flex items-center justify-center hover:bg-[#3d9be8] transition-colors">
                         <i class="fab fa-twitter text-xl text-white"></i>
                     </a>
+                </div>
             </div>
         </div>
-                        </div>
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
                 </path>
             </svg>
-                    </div>
+        </div>
         <!-- Floating Tech Stack Icons -->
         <div class="absolute top-1/4 left-10 opacity-20 rotate-12 floating">
             <i class="fab fa-react text-4xl text-blue-400"></i>
-                </div>
+        </div>
         <div class="absolute top-1/3 right-10 opacity-20 -rotate-12 floating" style="animation-delay: 1s;">
             <i class="fab fa-js text-4xl text-yellow-400"></i>
-                        </div>
+        </div>
         <div class="absolute bottom-1/4 left-20 opacity-20 rotate-45 floating" style="animation-delay: 2s;">
             <i class="fab fa-html5 text-4xl text-orange-400"></i>
-                                </div>
+        </div>
         <div class="absolute bottom-1/3 right-20 opacity-20 -rotate-45 floating" style="animation-delay: 3s;">
             <i class="fab fa-css3-alt text-4xl text-blue-400"></i>
-                            </div>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -996,18 +1024,19 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <!-- Image and Stats -->
                     <div class="relative">
-                    <div class="relative z-10">
+                        <div class="relative z-10">
                             <div
                                 class="aspect-square rounded-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500">
-                                <img src="./imgs/IMG_0089.JPG" alt="KomilDev" class="w-full h-full object-cover object-top">
-                        </div>
+                                <img src="./imgs/IMG_0089.JPG" alt="KomilDev"
+                                    class="w-full h-full object-cover object-top">
                             </div>
+                        </div>
                         <div
                             class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full opacity-20 blur-2xl">
                         </div>
                         <div
                             class="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full opacity-20 blur-2xl">
-                    </div>
+                        </div>
 
                         <!-- Stats Cards -->
                         <div class="grid grid-cols-2 gap-4 mt-8">
@@ -1015,14 +1044,14 @@
                                 class="bg-white/5 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-all duration-300">
                                 <div class="text-3xl font-bold text-blue-400 mb-2">3+</div>
                                 <div class="text-gray-300">Years Experience</div>
-                    </div>
+                            </div>
                             <div
                                 class="bg-white/5 backdrop-blur-sm rounded-xl p-4 transform hover:scale-105 transition-all duration-300">
                                 <div class="text-3xl font-bold text-purple-400 mb-2">50+</div>
                                 <div class="text-gray-300">Websites Built</div>
-                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
                     <!-- Content -->
                     <div class="space-y-6">
@@ -1038,19 +1067,19 @@
                             <div class="flex items-center space-x-3">
                                 <i class="fab fa-react text-blue-400 text-xl"></i>
                                 <span class="text-gray-300">React.js</span>
-                    </div>
+                            </div>
                             <div class="flex items-center space-x-3">
                                 <i class="fab fa-js text-yellow-400 text-xl"></i>
                                 <span class="text-gray-300">JavaScript</span>
-                </div>
+                            </div>
                             <div class="flex items-center space-x-3">
                                 <i class="fab fa-html5 text-orange-400 text-xl"></i>
                                 <span class="text-gray-300">HTML5</span>
-            </div>
+                            </div>
                             <div class="flex items-center space-x-3">
                                 <i class="fab fa-css3-alt text-blue-400 text-xl"></i>
                                 <span class="text-gray-300">CSS3</span>
-        </div>
+                            </div>
                         </div>
 
                         <!-- Download CV Button -->
@@ -1060,8 +1089,8 @@
                                 <i class="fas fa-download mr-2"></i>
                                 Download CV
                             </a>
-                </div>
-                </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1072,12 +1101,14 @@
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent"></div>
         <div class="container mx-auto px-[5%]">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+                <h2
+                    class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
                     Technical Skills
                 </h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
                 <p class="mt-6 text-gray-300 max-w-2xl mx-auto">
-                    My expertise spans across various technologies and tools, enabling me to create robust and scalable web applications.
+                    My expertise spans across various technologies and tools, enabling me to create robust and scalable
+                    web applications.
                 </p>
             </div>
 
@@ -1085,9 +1116,13 @@
                 <!-- Main Skills -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     <!-- Frontend Development -->
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-xl hover:scale-105 transition-all duration-300 group relative overflow-hidden">
-                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-full blur-2xl z-0"></div>
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 z-10 relative">
+                    <div
+                        class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-xl hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+                        <div
+                            class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-full blur-2xl z-0">
+                        </div>
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 z-10 relative">
                             <i class="fas fa-code text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-white mb-4 z-10 relative">Frontend Development</h3>
@@ -1096,36 +1131,46 @@
                             <div class="flex items-center mb-2">
                                 <i class="fab fa-html5 text-orange-400 text-xl mr-3"></i>
                                 <span class="text-gray-200 font-semibold flex-1">HTML5/CSS3</span>
-                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">95%</span>
+                                <span
+                                    class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">95%</span>
                             </div>
                             <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
-                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 95%"></div>
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar"
+                                    style="width: 95%"></div>
                             </div>
                             <!-- JavaScript -->
                             <div class="flex items-center mb-2">
                                 <i class="fab fa-js text-yellow-400 text-xl mr-3"></i>
                                 <span class="text-gray-200 font-semibold flex-1">JavaScript</span>
-                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">90%</span>
+                                <span
+                                    class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">90%</span>
                             </div>
                             <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
-                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 90%"></div>
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar"
+                                    style="width: 90%"></div>
                             </div>
                             <!-- React.js -->
                             <div class="flex items-center mb-2">
                                 <i class="fab fa-react text-blue-400 text-xl mr-3"></i>
                                 <span class="text-gray-200 font-semibold flex-1">React.js</span>
-                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">85%</span>
+                                <span
+                                    class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">85%</span>
                             </div>
                             <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-2">
-                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 85%"></div>
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar"
+                                    style="width: 85%"></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Backend Development -->
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-xl hover:scale-105 transition-all duration-300 group relative overflow-hidden">
-                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-purple-500/30 to-pink-600/30 rounded-full blur-2xl z-0"></div>
-                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 z-10 relative">
+                    <div
+                        class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-xl hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+                        <div
+                            class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-purple-500/30 to-pink-600/30 rounded-full blur-2xl z-0">
+                        </div>
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 z-10 relative">
                             <i class="fas fa-server text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-white mb-4 z-10 relative">Backend Development</h3>
@@ -1134,36 +1179,46 @@
                             <div class="flex items-center mb-2">
                                 <i class="fab fa-node-js text-green-400 text-xl mr-3"></i>
                                 <span class="text-gray-200 font-semibold flex-1">Node.js</span>
-                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">80%</span>
+                                <span
+                                    class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">80%</span>
                             </div>
                             <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
-                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 80%"></div>
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar"
+                                    style="width: 80%"></div>
                             </div>
                             <!-- Express.js -->
                             <div class="flex items-center mb-2">
                                 <i class="fas fa-bolt text-yellow-300 text-xl mr-3"></i>
                                 <span class="text-gray-200 font-semibold flex-1">Express.js</span>
-                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">85%</span>
+                                <span
+                                    class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">85%</span>
                             </div>
                             <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
-                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 85%"></div>
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar"
+                                    style="width: 85%"></div>
                             </div>
                             <!-- MongoDB -->
                             <div class="flex items-center mb-2">
                                 <i class="fas fa-database text-green-500 text-xl mr-3"></i>
                                 <span class="text-gray-200 font-semibold flex-1">MongoDB</span>
-                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">75%</span>
+                                <span
+                                    class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">75%</span>
                             </div>
                             <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-2">
-                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 75%"></div>
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar"
+                                    style="width: 75%"></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Tools & Others -->
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-xl hover:scale-105 transition-all duration-300 group relative overflow-hidden">
-                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-cyan-500/30 to-blue-600/30 rounded-full blur-2xl z-0"></div>
-                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 z-10 relative">
+                    <div
+                        class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-xl hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+                        <div
+                            class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-cyan-500/30 to-blue-600/30 rounded-full blur-2xl z-0">
+                        </div>
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 z-10 relative">
                             <i class="fas fa-tools text-2xl text-white"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-white mb-4 z-10 relative">Tools & Others</h3>
@@ -1172,28 +1227,34 @@
                             <div class="flex items-center mb-2">
                                 <i class="fab fa-git-alt text-orange-400 text-xl mr-3"></i>
                                 <span class="text-gray-200 font-semibold flex-1">Git/GitHub</span>
-                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">90%</span>
+                                <span
+                                    class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">90%</span>
                             </div>
                             <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
-                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 90%"></div>
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar"
+                                    style="width: 90%"></div>
                             </div>
                             <!-- Docker -->
                             <div class="flex items-center mb-2">
                                 <i class="fab fa-docker text-blue-400 text-xl mr-3"></i>
                                 <span class="text-gray-200 font-semibold flex-1">Docker</span>
-                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">70%</span>
+                                <span
+                                    class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">70%</span>
                             </div>
                             <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-4">
-                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 70%"></div>
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar"
+                                    style="width: 70%"></div>
                             </div>
                             <!-- AWS -->
                             <div class="flex items-center mb-2">
                                 <i class="fab fa-aws text-yellow-400 text-xl mr-3"></i>
                                 <span class="text-gray-200 font-semibold flex-1">AWS</span>
-                                <span class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">65%</span>
+                                <span
+                                    class="ml-2 text-xs font-bold text-white bg-gradient-to-r from-blue-500 to-purple-600 px-2 py-1 rounded-full shadow">65%</span>
                             </div>
                             <div class="relative h-3 bg-white/10 rounded-full overflow-hidden mb-2">
-                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar" style="width: 65%"></div>
+                                <div class="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full shadow-lg animate-skill-bar"
+                                    style="width: 65%"></div>
                             </div>
                         </div>
                     </div>
@@ -1201,20 +1262,28 @@
 
                 <!-- Additional Skills -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center transform hover:scale-105 transition-all duration-300 group">
-                        <i class="fab fa-react text-4xl text-blue-400 mb-4 group-hover:rotate-12 transition-transform duration-300"></i>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center transform hover:scale-105 transition-all duration-300 group">
+                        <i
+                            class="fab fa-react text-4xl text-blue-400 mb-4 group-hover:rotate-12 transition-transform duration-300"></i>
                         <h4 class="text-white font-semibold">React</h4>
                     </div>
-                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center transform hover:scale-105 transition-all duration-300 group">
-                        <i class="fab fa-node-js text-4xl text-green-400 mb-4 group-hover:rotate-12 transition-transform duration-300"></i>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center transform hover:scale-105 transition-all duration-300 group">
+                        <i
+                            class="fab fa-node-js text-4xl text-green-400 mb-4 group-hover:rotate-12 transition-transform duration-300"></i>
                         <h4 class="text-white font-semibold">Node.js</h4>
                     </div>
-                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center transform hover:scale-105 transition-all duration-300 group">
-                        <i class="fab fa-js text-4xl text-yellow-400 mb-4 group-hover:rotate-12 transition-transform duration-300"></i>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center transform hover:scale-105 transition-all duration-300 group">
+                        <i
+                            class="fab fa-js text-4xl text-yellow-400 mb-4 group-hover:rotate-12 transition-transform duration-300"></i>
                         <h4 class="text-white font-semibold">JavaScript</h4>
                     </div>
-                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center transform hover:scale-105 transition-all duration-300 group">
-                        <i class="fab fa-html5 text-4xl text-orange-400 mb-4 group-hover:rotate-12 transition-transform duration-300"></i>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 text-center transform hover:scale-105 transition-all duration-300 group">
+                        <i
+                            class="fab fa-html5 text-4xl text-orange-400 mb-4 group-hover:rotate-12 transition-transform duration-300"></i>
                         <h4 class="text-white font-semibold">HTML5</h4>
                     </div>
                 </div>
@@ -1223,7 +1292,8 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 relative overflow-hidden hidden-during-load">
+    <section id="projects"
+        class="py-20 relative overflow-hidden bg-gradient-to-b from-transparent via-blue-500/5 to-transparent">
         <div class="container mx-auto px-[5%]">
             <div class="text-center mb-16">
                 <h2
@@ -1235,19 +1305,22 @@
             <!-- Project Filters -->
             <div class="flex flex-wrap justify-center gap-4 mb-12">
                 <button
-                    class="px-6 py-2 rounded-full bg-white/5 text-white hover:bg-[#4facfe]/20 transition-colors active-filter"
+                    class="px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
                     data-filter="all">
                     All Projects
                 </button>
-                <button class="px-6 py-2 rounded-full bg-white/5 text-white hover:bg-[#4facfe]/20 transition-colors"
+                <button
+                    class="px-6 py-2 rounded-full bg-white/5 text-white hover:bg-blue-500/20 transition-colors duration-300"
                     data-filter="react">
                     React Apps
                 </button>
-                <button class="px-6 py-2 rounded-full bg-white/5 text-white hover:bg-[#4facfe]/20 transition-colors"
+                <button
+                    class="px-6 py-2 rounded-full bg-white/5 text-white hover:bg-blue-500/20 transition-colors duration-300"
                     data-filter="landing">
                     Landing Pages
                 </button>
-                <button class="px-6 py-2 rounded-full bg-white/5 text-white hover:bg-[#4facfe]/20 transition-colors"
+                <button
+                    class="px-6 py-2 rounded-full bg-white/5 text-white hover:bg-blue-500/20 transition-colors duration-300"
                     data-filter="ui">
                     UI/UX Design
                 </button>
@@ -1256,7 +1329,7 @@
             <!-- Projects Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
-                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300"
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 project-card"
                     data-category="react">
                     <div class="aspect-video overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
@@ -1268,7 +1341,7 @@
                         <p class="text-gray-300 mb-4">A modern admin dashboard with real-time analytics and interactive
                             charts.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-[#4facfe]/20 text-[#4facfe] rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">React</span>
                             <span
                                 class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Chart.js</span>
                             <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Tailwind</span>
@@ -1288,7 +1361,7 @@
                 </div>
 
                 <!-- Project Card 2 -->
-                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300"
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 project-card"
                     data-category="landing">
                     <div class="aspect-video overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
@@ -1300,7 +1373,7 @@
                         <p class="text-gray-300 mb-4">A responsive portfolio website with smooth animations and modern
                             design.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-[#4facfe]/20 text-[#4facfe] rounded-full text-sm">HTML5</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">HTML5</span>
                             <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">CSS3</span>
                             <span
                                 class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm">JavaScript</span>
@@ -1320,7 +1393,7 @@
                 </div>
 
                 <!-- Project Card 3 -->
-                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300"
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 project-card"
                     data-category="ui">
                     <div class="aspect-video overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
@@ -1332,7 +1405,7 @@
                         <p class="text-gray-300 mb-4">A beautiful task management interface with drag-and-drop
                             functionality.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-[#4facfe]/20 text-[#4facfe] rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">React</span>
                             <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm">Redux</span>
                             <span
                                 class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Styled-Components</span>
@@ -1343,37 +1416,283 @@
                             </a>
                             <a href="#" class="text-gray-400 hover:text-white transition-colors">
                                 <i class="fab fa-github text-xl"></i>
-                        </a>
+                            </a>
+                        </div>
                     </div>
-                </div>
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            </div>
-        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 project-card"
+                    data-category="react">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Social Media App"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Social Media App</h3>
+                        <p class="text-gray-300 mb-4">A full-featured social media platform with real-time messaging and
+                            feeds.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Socket.io</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 project-card"
+                    data-category="landing">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Restaurant Website"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Restaurant Website</h3>
+                        <p class="text-gray-300 mb-4">An elegant restaurant website with online ordering and reservation
+                            system.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">CSS3</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm">PHP</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 project-card"
+                    data-category="ui">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Mobile App Design"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Mobile App Design</h3>
+                        <p class="text-gray-300 mb-4">Modern mobile app UI/UX design with clean interface and smooth
+                            interactions.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-400 rounded-full text-sm">Figma</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Adobe
+                                XD</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Sketch</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+
+                <!-- Hidden Project Cards (7-9) -->
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 project-card hidden-card hidden opacity-0"
+                    data-category="react">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Weather App"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Weather App</h3>
+                        <p class="text-gray-300 mb-4">A beautiful weather app with forecasts and interactive maps.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm">API</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">CSS3</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 project-card hidden-card hidden opacity-0"
+                    data-category="landing">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Gym Website"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Gym Website</h3>
+                        <p class="text-gray-300 mb-4">A dynamic fitness website with membership plans and class
+                            schedules.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">HTML5</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">CSS3</span>
+                            <span
+                                class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm">Bootstrap</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+
+                <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 project-card hidden-card hidden opacity-0"
+                    data-category="ui">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Banking App UI"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Banking App UI</h3>
+                        <p class="text-gray-300 mb-4">Secure and intuitive banking app interface with transaction
+                            management.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-400 rounded-full text-sm">Figma</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Prototyping</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">UX
+                                Research</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
             </div>
 
-            <!-- View More Button -->
+            <!-- Show More Button -->
             <div class="text-center mt-12">
-                <a href="#"
-                    class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1 click-ripple">
-                    View All Projects
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <button id="showMoreBtn"
+                    class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+                    <span class="relative z-10">Show More</span>
+                    <i class="fas fa-arrow-down ml-2 relative z-10"></i>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </button>
             </div>
         </div>
+
+        <!-- FontAwesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            const hiddenCards = document.querySelectorAll('.hidden-card');
+            let isExpanded = false;
+
+            showMoreBtn.addEventListener('click', function () {
+                if (!isExpanded) {
+                    // Show hidden cards
+                    hiddenCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.remove('hidden');
+                            card.classList.add('animate-pulse');
+
+                            setTimeout(() => {
+                                card.classList.remove('opacity-0', 'animate-pulse');
+                                card.classList.add('opacity-100');
+                            }, 100);
+                        }, index * 150);
+                    });
+
+                    // Update button
+                    showMoreBtn.innerHTML = `
+                <span class="relative z-10">Show Less</span>
+                <i class="fas fa-arrow-up ml-2 relative z-10"></i>
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+            `;
+                    isExpanded = true;
+                } else {
+                    // Hide cards
+                    hiddenCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.remove('opacity-100');
+                            card.classList.add('opacity-0');
+
+                            setTimeout(() => {
+                                card.classList.add('hidden');
+                            }, 300);
+                        }, index * 100);
+                    });
+
+                    // Update button
+                    showMoreBtn.innerHTML = `
+                <span class="relative z-10">Show More</span>
+                <i class="fas fa-arrow-down ml-2 relative z-10"></i>
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+            `;
+                    isExpanded = false;
+                }
+            });
+        });
+    </script>
     <!-- Contact Section -->
     <section id="contact" class="py-20 relative overflow-hidden hidden-during-load">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent"></div>
         <div class="container mx-auto px-[5%]">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+                <h2
+                    class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
                     Let's Connect
                 </h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
                 <p class="mt-6 text-gray-300 max-w-2xl mx-auto">
-                    Have a project in mind? Let's discuss how we can bring your ideas to life with beautiful, responsive web experiences.
+                    Have a project in mind? Let's discuss how we can bring your ideas to life with beautiful, responsive
+                    web experiences.
                 </p>
             </div>
 
@@ -1381,51 +1700,62 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <!-- Contact Info -->
                     <div class="space-y-8">
-                        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 transform hover:scale-105 transition-all duration-300">
+                        <div
+                            class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 transform hover:scale-105 transition-all duration-300">
                             <h3 class="text-2xl font-semibold text-white mb-4">Get in Touch</h3>
                             <p class="text-gray-300 leading-relaxed">
-                                I'm always excited to hear about new projects and opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                                I'm always excited to hear about new projects and opportunities. Whether you have a
+                                question or just want to say hi, I'll try my best to get back to you!
                             </p>
                         </div>
 
                         <!-- Contact Cards -->
                         <div class="space-y-4">
-                            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300 group">
+                            <div
+                                class="bg-white/5 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300 group">
                                 <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <div
+                                        class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
                                         <i class="fab fa-telegram text-white text-xl"></i>
                                     </div>
                                     <div>
                                         <h4 class="text-white font-semibold">Telegram</h4>
-                                        <a href="https://t.me/your_username" target="_blank" class="text-gray-300 hover:text-blue-400 transition-colors group-hover:translate-x-2 inline-block">
+                                        <a href="https://t.me/your_username" target="_blank"
+                                            class="text-gray-300 hover:text-blue-400 transition-colors group-hover:translate-x-2 inline-block">
                                             @your_username
                                         </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300 group">
+                            <div
+                                class="bg-white/5 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300 group">
                                 <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <div
+                                        class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
                                         <i class="fas fa-phone text-white text-xl"></i>
                                     </div>
                                     <div>
                                         <h4 class="text-white font-semibold">Phone</h4>
-                                        <a href="tel:+1234567890" class="text-gray-300 hover:text-purple-400 transition-colors group-hover:translate-x-2 inline-block">
+                                        <a href="tel:+1234567890"
+                                            class="text-gray-300 hover:text-purple-400 transition-colors group-hover:translate-x-2 inline-block">
                                             +1 (234) 567-890
                                         </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300 group">
+                            <div
+                                class="bg-white/5 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300 group">
                                 <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                                    <div
+                                        class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
                                         <i class="fas fa-map-marker-alt text-white text-xl"></i>
                                     </div>
                                     <div>
                                         <h4 class="text-white font-semibold">Location</h4>
-                                        <p class="text-gray-300 group-hover:translate-x-2 inline-block transition-transform">
+                                        <p
+                                            class="text-gray-300 group-hover:translate-x-2 inline-block transition-transform">
                                             New York, USA
                                         </p>
                                     </div>
@@ -1437,13 +1767,16 @@
                         <div class="pt-4">
                             <h4 class="text-white font-semibold mb-4">Connect With Me</h4>
                             <div class="flex space-x-4">
-                                <a href="#" class="w-12 h-12 bg-[#4facfe] rounded-full flex items-center justify-center hover:bg-[#3d9be8] transition-colors">
+                                <a href="#"
+                                    class="w-12 h-12 bg-[#4facfe] rounded-full flex items-center justify-center hover:bg-[#3d9be8] transition-colors">
                                     <i class="fab fa-github text-xl text-white"></i>
                                 </a>
-                                <a href="#" class="w-12 h-12 bg-[#4facfe] rounded-full flex items-center justify-center hover:bg-[#3d9be8] transition-colors">
+                                <a href="#"
+                                    class="w-12 h-12 bg-[#4facfe] rounded-full flex items-center justify-center hover:bg-[#3d9be8] transition-colors">
                                     <i class="fab fa-linkedin text-xl text-white"></i>
                                 </a>
-                                <a href="#" class="w-12 h-12 bg-[#4facfe] rounded-full flex items-center justify-center hover:bg-[#3d9be8] transition-colors">
+                                <a href="#"
+                                    class="w-12 h-12 bg-[#4facfe] rounded-full flex items-center justify-center hover:bg-[#3d9be8] transition-colors">
                                     <i class="fab fa-twitter text-xl text-white"></i>
                                 </a>
                             </div>
@@ -1451,39 +1784,46 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 transform hover:scale-105 transition-all duration-300">
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 transform hover:scale-105 transition-all duration-300">
                         <form id="contactForm" class="space-y-6" onsubmit="return sendTelegramMessage(event)">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="relative">
                                     <input type="text" id="name" name="name" required
                                         class="w-full px-4 py-3 bg-white/5 border border-[#4facfe]/20 rounded-lg text-white focus:border-[#4facfe] transition-colors"
                                         placeholder=" ">
-                                    <label for="name" class="absolute left-4 top-3 text-gray-400 transition-all duration-300 pointer-events-none">Name</label>
+                                    <label for="name"
+                                        class="absolute left-4 top-3 text-gray-400 transition-all duration-300 pointer-events-none">Name</label>
                                 </div>
                                 <div class="relative">
                                     <input type="text" id="telegram" name="telegram" required
                                         class="w-full px-4 py-3 bg-white/5 border border-[#4facfe]/20 rounded-lg text-white focus:border-[#4facfe] transition-colors"
                                         placeholder=" ">
-                                    <label for="telegram" class="absolute left-4 top-3 text-gray-400 transition-all duration-300 pointer-events-none">Telegram Username</label>
+                                    <label for="telegram"
+                                        class="absolute left-4 top-3 text-gray-400 transition-all duration-300 pointer-events-none">Telegram
+                                        Username</label>
                                 </div>
                             </div>
                             <div class="relative">
                                 <input type="text" id="subject" name="subject" required
                                     class="w-full px-4 py-3 bg-white/5 border border-[#4facfe]/20 rounded-lg text-white focus:border-[#4facfe] transition-colors"
                                     placeholder=" ">
-                                <label for="subject" class="absolute left-4 top-3 text-gray-400 transition-all duration-300 pointer-events-none">Subject</label>
+                                <label for="subject"
+                                    class="absolute left-4 top-3 text-gray-400 transition-all duration-300 pointer-events-none">Subject</label>
                             </div>
                             <div class="relative">
                                 <textarea id="message" name="message" rows="5" required
                                     class="w-full px-4 py-3 bg-white/5 border border-[#4facfe]/20 rounded-lg text-white focus:border-[#4facfe] transition-colors resize-none"
                                     placeholder=" "></textarea>
-                                <label for="message" class="absolute left-4 top-3 text-gray-400 transition-all duration-300 pointer-events-none">Message</label>
+                                <label for="message"
+                                    class="absolute left-4 top-3 text-gray-400 transition-all duration-300 pointer-events-none">Message</label>
                             </div>
                             <button type="submit"
                                 class="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1 click-ripple group">
                                 <span class="flex items-center justify-center">
                                     Send Message
-                                    <i class="fab fa-telegram ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                                    <i
+                                        class="fab fa-telegram ml-2 transform group-hover:translate-x-1 transition-transform"></i>
                                 </span>
                             </button>
                         </form>
@@ -1505,7 +1845,8 @@
     </footer>
 
     <!-- Add this just before </body> -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-opacity duration-500 flex items-center space-x-2">
+    <div id="toast"
+        class="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-opacity duration-500 flex items-center space-x-2">
         <i class="fas fa-paper-plane"></i>
         <span>SMS sent to KomilDev</span>
     </div>
@@ -1524,7 +1865,7 @@
                     // Show header only after loader is fully gone
                     document.querySelector('header').classList.remove('hidden');
                 }, 500);
-            }, 2000); // Show loader for 2 seconds
+            }, 4000); // Show loader for 2 seconds
         });
 
         // Custom cursor
@@ -1851,4 +2192,4 @@ Message: ${formData.get('message')}
     </script>
 </body>
 
-</html> 
+</html>
