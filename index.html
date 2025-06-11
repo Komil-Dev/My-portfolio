@@ -398,6 +398,118 @@
 
 
 
+    <script>
+        // Loader management
+        const loader = document.getElementById('loader');
+        const header = document.getElementById('header');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        // Hide header initially during loading
+        header.style.display = 'none';
+
+        // Show header after loader completes
+        setTimeout(() => {
+            loader.classList.add('loaded');
+            setTimeout(() => {
+                loader.style.display = 'none';
+                header.style.display = 'block';
+                // Add fade-in animation to header
+                header.style.opacity = '0';
+                header.style.animation = 'fadeInHeader 0.8s ease-in-out forwards';
+            }, 800); // Match the fadeOut animation duration
+        }, 4000); // Match the total loader time
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            const scrolled = window.pageYOffset;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = (scrolled / maxScroll) * 100;
+
+            if (scrolled > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            scrollIndicator.style.width = scrollPercentage + '%';
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Active link highlighting
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.demo-section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+
+                // Close mobile menu
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for smoother active link detection
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '-80px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 
     <!-- Enhanced Hero Section -->
     <section id="home"
@@ -1444,7 +1556,7 @@
 
         // Mobile menu toggle
         const menuButton = document.querySelector('button.md\\:hidden');
-        const mobileMenu = document.createElement('div');
+
         mobileMenu.className = 'fixed inset-0 bg-black/90 backdrop-blur-lg z-50 transform translate-x-full transition-transform duration-300';
         mobileMenu.innerHTML = `
             <div class="container mx-auto px-6 py-8">
