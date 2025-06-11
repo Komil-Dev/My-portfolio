@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KomilDev</title>
+    <title>Interactive Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -317,199 +317,25 @@
     <div class="cursor-light"></div>
 
     <!-- Enhanced Header -->
-    <header class="header" id="header">
-        <div class="header-container">
-            <a href="#" class="logo">
-                <span>KomilDev</span>
-                <div class="logo-dot"></div>
-            </a>
-
-            <nav>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link active">
-                            <i class="fas fa-home nav-icon"></i>
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">
-                            <i class="fas fa-user nav-icon"></i>
-                            About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#projects" class="nav-link">
-                            <i class="fas fa-code nav-icon"></i>
-                            Projects
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#services" class="nav-link">
-                            <i class="fas fa-cogs nav-icon"></i>
-                            Services
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">
-                            <i class="fas fa-envelope nav-icon"></i>
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <a href="#contact" class="cta-button">Get In Touch</a>
-
-            <button class="menu-toggle" id="menuToggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+    <header class="fixed w-full z-50 header-blur hidden-during-load">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text flex items-center">
+                    <span class="mr-2">KomilDev</span>
+                    <div class="w-2 h-2 bg-[#4facfe] rounded-full animate-pulse"></div>
+                </a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-white">HOME</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white">ABOUT</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-white">PROJECTS</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white">CONTACT</a>
+                </nav>
+                <button class="md:hidden text-2xl text-white hover:text-[#4facfe] transition-colors">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-
-        <div class="scroll-indicator" id="scrollIndicator"></div>
     </header>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <nav class="mobile-nav">
-            <a href="#home" class="nav-link active">
-                <span>Home</span>
-                <i class="fas fa-home nav-icon"></i>
-            </a>
-            <a href="#about" class="nav-link">
-                <span>About</span>
-                <i class="fas fa-user nav-icon"></i>
-            </a>
-            <a href="#projects" class="nav-link">
-                <span>Projects</span>
-                <i class="fas fa-code nav-icon"></i>
-            </a>
-            <a href="#services" class="nav-link">
-                <span>Services</span>
-                <i class="fas fa-cogs nav-icon"></i>
-            </a>
-            <a href="#contact" class="nav-link">
-                <span>Contact</span>
-                <i class="fas fa-envelope nav-icon"></i>
-            </a>
-        </nav>
-    </div>
-
-
-
-    <script>
-        // Loader management
-        const loader = document.getElementById('loader');
-        const header = document.getElementById('header');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        // Hide header initially during loading
-        header.style.display = 'none';
-
-        // Show header after loader completes
-        setTimeout(() => {
-            loader.classList.add('loaded');
-            setTimeout(() => {
-                loader.style.display = 'none';
-                header.style.display = 'block';
-                // Add fade-in animation to header
-                header.style.opacity = '0';
-                header.style.animation = 'fadeInHeader 0.8s ease-in-out forwards';
-            }, 800); // Match the fadeOut animation duration
-        }, 4000); // Match the total loader time
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const scrollIndicator = document.getElementById('scrollIndicator');
-            const scrolled = window.pageYOffset;
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercentage = (scrolled / maxScroll) * 100;
-
-            if (scrolled > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-
-            scrollIndicator.style.width = scrollPercentage + '%';
-        });
-
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Active link highlighting
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('.demo-section');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Smooth scrolling
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                if (targetId.startsWith('#')) {
-                    const targetSection = document.querySelector(targetId);
-                    if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-
-                // Close mobile menu
-                menuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-
-        // Intersection Observer for smoother active link detection
-        const observerOptions = {
-            threshold: 0.3,
-            rootMargin: '-80px 0px -80px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + id) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
 
     <!-- Enhanced Hero Section -->
     <section id="home"
@@ -1556,7 +1382,7 @@
 
         // Mobile menu toggle
         const menuButton = document.querySelector('button.md\\:hidden');
-
+        const mobileMenu = document.createElement('div');
         mobileMenu.className = 'fixed inset-0 bg-black/90 backdrop-blur-lg z-50 transform translate-x-full transition-transform duration-300';
         mobileMenu.innerHTML = `
             <div class="container mx-auto px-6 py-8">
