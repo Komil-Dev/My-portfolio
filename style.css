@@ -116,17 +116,6 @@ body {
   box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
 }
 
-.cursor-glow {
-  width: 20px;
-  height: 20px;
-  background: rgba(79, 172, 254, 0.5);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.2s ease;
-}
-
 .hover-glow:hover {
   box-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
   transform: translateY(-5px);
