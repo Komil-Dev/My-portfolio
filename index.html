@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Portfolio</title>
+    <title>KomilDev</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -320,22 +320,54 @@
     <header class="fixed w-full z-50 header-blur hidden-during-load">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold gradient-text flex items-center">
-                    <span class="mr-2">KomilDev</span>
-                    <div class="w-2 h-2 bg-[#4facfe] rounded-full animate-pulse"></div>
+                <a href="#" class="logo">
+                    <span>KomilDev</span>
+                    <div class="logo-dot"></div>
                 </a>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-300 hover:text-white">HOME</a>
-                    <a href="#about" class="nav-link text-gray-300 hover:text-white">ABOUT</a>
-                    <a href="#projects" class="nav-link text-gray-300 hover:text-white">PROJECTS</a>
-                    <a href="#contact" class="nav-link text-gray-300 hover:text-white">CONTACT</a>
+
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active">
+                                <i class="fas fa-home nav-icon"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">
+                                <i class="fas fa-user nav-icon"></i>
+                                About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#projects" class="nav-link">
+                                <i class="fas fa-code nav-icon"></i>
+                                Projects
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#services" class="nav-link">
+                                <i class="fas fa-cogs nav-icon"></i>
+                                Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">
+                                <i class="fas fa-envelope nav-icon"></i>
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
+                <button class="cta-button">contct</button>
                 <button class="md:hidden text-2xl text-white hover:text-[#4facfe] transition-colors">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
     </header>
+
+
 
     <!-- Enhanced Hero Section -->
     <section id="home"
@@ -1393,14 +1425,30 @@
                         </svg>
                     </button>
                 </div>
-                <nav class="mt-8">
-                    <ul class="space-y-6 text-center">
-                        <li><a href="#home" class="text-2xl text-white hover:text-blue-400 transition-colors block py-2">Home</a></li>
-                        <li><a href="#about" class="text-2xl text-white hover:text-blue-400 transition-colors block py-2">About</a></li>
-                        <li><a href="#projects" class="text-2xl text-white hover:text-blue-400 transition-colors block py-2">Projects</a></li>
-                        <li><a href="#contact" class="text-2xl text-white hover:text-blue-400 transition-colors block py-2">Contact</a></li>
-                    </ul>
-                </nav>
+                  
+        <nav class="mobile-nav">
+            <a href="#home" class="nav-link active">
+                <span>Home</span>
+                <i class="fas fa-home nav-icon"></i>
+            </a>
+            <a href="#about" class="nav-link">
+                <span>About</span>
+                <i class="fas fa-user nav-icon"></i>
+            </a>
+            <a href="#projects" class="nav-link">
+                <span>Projects</span>
+                <i class="fas fa-code nav-icon"></i>
+            </a>
+            <a href="#services" class="nav-link">
+                <span>Services</span>
+                <i class="fas fa-cogs nav-icon"></i>
+            </a>
+            <a href="#contact" class="nav-link">
+                <span>Contact</span>
+                <i class="fas fa-envelope nav-icon"></i>
+            </a>
+        </nav>
+    
             </div>
         `;
         document.body.appendChild(mobileMenu);
