@@ -1376,7 +1376,7 @@
             });
         });
 
-        // Particle effect
+
         function createParticle(e) {
             const particle = document.createElement('div');
             particle.className = 'particle';
@@ -1404,7 +1404,7 @@
             }
         });
 
-        // Skill bars animation
+
         const skillBars = document.querySelectorAll('.skill-item .bg-gradient-to-r');
         const skillObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1420,7 +1420,7 @@
             skillObserver.observe(bar);
         });
 
-        // Testimonial carousel
+
         let currentTestimonial = 0;
         const testimonials = document.querySelectorAll('.testimonial-card');
 
@@ -1433,7 +1433,7 @@
 
         setInterval(rotateTestimonials, 5000);
 
-        // Enhanced header scroll effect
+
         const header = document.querySelector('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1443,7 +1443,7 @@
             }
         });
 
-        // Mobile menu toggle
+
         const menuButton = document.querySelector('button.md\\:hidden');
         const mobileMenu = document.createElement('div');
         mobileMenu.className = 'fixed inset-0 bg-black/90 backdrop-blur-lg z-50 transform translate-x-full transition-transform duration-300';
@@ -1492,7 +1492,7 @@
             mobileMenu.classList.add('translate-x-full');
         });
 
-        // Smooth Scroll
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1508,7 +1508,7 @@
             });
         });
 
-        // Intersection Observer for Animations
+
         const animationObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1523,14 +1523,14 @@
             animationObserver.observe(card);
         });
 
-        // Form Submission
+
         const contactForm = document.querySelector('#contact form');
         const newsletterForm = document.querySelector('#newsletter-form');
 
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                // Add your form submission logic here
+
                 alert('Thank you for your message! We will get back to you soon.');
                 contactForm.reset();
             });
@@ -1539,13 +1539,13 @@
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                // Add your newsletter subscription logic here
+
                 alert('Thank you for subscribing to our newsletter!');
                 newsletterForm.reset();
             });
         }
 
-        // Cursor Light Effect
+
         const cursorLight = document.querySelector('.cursor-light');
         if (cursorLight) {
             document.addEventListener('mousemove', (e) => {
@@ -1562,20 +1562,16 @@
             });
         }
 
-        // Project Filtering
+
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('[data-filter]');
             const projectCards = document.querySelectorAll('[data-category]');
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Remove active class from all buttons
                     filterButtons.forEach(btn => btn.classList.remove('active-filter'));
-                    // Add active class to clicked button
                     button.classList.add('active-filter');
-
                     const filter = button.getAttribute('data-filter');
-
                     projectCards.forEach(card => {
                         if (filter === 'all' || card.getAttribute('data-category') === filter) {
                             card.style.display = 'block';
@@ -1595,17 +1591,17 @@
             });
         });
 
-        // Telegram Bot Integration
+
         async function sendTelegramMessage(event) {
             event.preventDefault();
             const form = event.target;
             const formData = new FormData(form);
 
-            // Your Telegram Bot Token and Chat ID
+
             const BOT_TOKEN = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE';
             const CHAT_ID = '7241567559';
 
-            // Format message
+
             const message = `
 New Contact Form Submission:
 Name: ${formData.get('name')}
@@ -1630,7 +1626,7 @@ Message: ${formData.get('message')}
                 const data = await response.json();
 
                 if (data.ok) {
-                    // Show success message with green color
+
                     showSuccessMessage('Message sent successfully! Thank you for contacting us.');
                     form.reset();
                 } else {
@@ -1644,9 +1640,9 @@ Message: ${formData.get('message')}
             return false;
         }
 
-        // Function to show success message with green color
+
         function showSuccessMessage(message) {
-            // Remove any existing messages
+
             removeExistingMessages();
 
             const successDiv = document.createElement('div');
@@ -1682,11 +1678,11 @@ Message: ${formData.get('message')}
         </div>
     `;
 
-            // Insert after the form
+
             const form = document.querySelector('form');
             form.parentNode.insertBefore(successDiv, form.nextSibling);
 
-            // Auto-remove after 5 seconds
+
             setTimeout(() => {
                 if (document.getElementById('success-message')) {
                     document.getElementById('success-message').remove();
@@ -1694,9 +1690,9 @@ Message: ${formData.get('message')}
             }, 5000);
         }
 
-        // Function to show error message with red color
+
         function showErrorMessage(message) {
-            // Remove any existing messages
+
             removeExistingMessages();
 
             const errorDiv = document.createElement('div');
@@ -1732,11 +1728,10 @@ Message: ${formData.get('message')}
         </div>
     `;
 
-            // Insert after the form
             const form = document.querySelector('form');
             form.parentNode.insertBefore(errorDiv, form.nextSibling);
 
-            // Auto-remove after 5 seconds
+
             setTimeout(() => {
                 if (document.getElementById('error-message')) {
                     document.getElementById('error-message').remove();
@@ -1744,7 +1739,6 @@ Message: ${formData.get('message')}
             }, 5000);
         }
 
-        // Helper function to remove existing messages
         function removeExistingMessages() {
             const existingSuccess = document.getElementById('success-message');
             const existingError = document.getElementById('error-message');
@@ -1756,14 +1750,13 @@ Message: ${formData.get('message')}
                 existingError.remove();
             }
         }
-        // Add smooth animation for project cards
+
         document.querySelectorAll('[data-category]').forEach(card => {
             card.style.transition = 'all 0.3s ease';
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
         });
 
-        // Add this JS function at the end of the script
         function showToast() {
             const toast = document.getElementById('toast');
             toast.style.opacity = '1';
@@ -1774,7 +1767,7 @@ Message: ${formData.get('message')}
             }, 3500);
         }
 
-        // On page start, hide all .hidden-during-load elements and header
+
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.hidden-during-load').forEach(el => {
                 el.classList.add('hidden');
