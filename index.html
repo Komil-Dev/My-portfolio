@@ -1311,6 +1311,32 @@
             </div>
         </div>
     </footer>
+    <a href="#" id="scroll-top"
+        class="scroll-top hidden fixed bottom-5 right-5 bg-blue-600 hover:bg-blue-700 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </a>
+
+
+    <script>
+        const scrollTopBtn = document.getElementById('scroll-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.remove('hidden');
+            } else {
+                scrollTopBtn.classList.add('hidden');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
 
 
     <div id="toast"
@@ -1318,6 +1344,7 @@
         <i class="fas fa-paper-plane"></i>
         <span>SMS sent to KomilDev</span>
     </div>
+
 
     <script>
 
